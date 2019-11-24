@@ -1,6 +1,6 @@
 const squareCollection = document.querySelector('.squareCollection');
 const fragment = document.createDocumentFragment();
-const grid = [2, 10];
+const grid = [1, 10];
 const col = grid[0];
 const row = grid[1];
 const numberOfElements = col * row;
@@ -24,7 +24,7 @@ function xBoundries() {
 }
 
 const test1 = 0;
-const test2 = 200;
+const test2 = 50;
 
 // if(xPos <= 0) {
 //   return xPos += 5
@@ -36,12 +36,13 @@ let fromVar = true;
 anime({
   targets: '.square',
   loop: false,
-  translateY: anime.stagger([0, 300]),
+  translateY: anime.stagger([0, 250]),
   // translateY: function() {
   //   return yPos += 18;
   // },
-  translateX: anime.stagger([test1, test2]),
-  borderRadius: ['0%', '20%'],
+  translateX: 0,
+  borderRadius: ['0%', '40%'],
+  scaleY: 2,
   // delay: anime.stagger(100)
 });
 
@@ -50,10 +51,11 @@ function pulse() {
   anime({
     targets: '.square',
     scale: [
-      {value: 1.3, easing: 'easeInOutSine', duration: 100},
+      {value: 1.5, easing: 'easeInOutSine', duration: 200},
       {value: 1, easing: 'easeInOutSine', duration: 200}
     ],
     loop: true,
+    // backgroundColor: '#ff0000',
     // delay: anime.stagger(100, {from: 'center'})
     delay: anime.stagger(100)
   });
@@ -65,7 +67,7 @@ function reversePulse() {
   anime({
     targets: '.square',
     scale: [
-      {value: 1.3, easing: 'easeInOutSine', duration: 100},
+      {value: 2, easing: 'easeInOutSine', duration: 100},
       {value: 1, easing: 'easeInOutSine', duration: 200}
     ],
     loop: false,
