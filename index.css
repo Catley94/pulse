@@ -1,20 +1,35 @@
 body,
 html{
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100vh;
   background-color: orange;
+  /* overflow: hidden; */
 }
 
-.square {
-
+.bottomV, .topV {
   position: absolute;
-  width: 1rem;
+  width: 0.5rem;
   height: 1rem;
   /* border: 1px solid #FFF; */
   background-color: #FFF;
-  margin: 10px;
 
+
+}
+
+.topVCollection {
+    position: absolute;
+    top: 0vh;
+    left: 0vw;
+}
+
+.bottomVCollection {
+    position: absolute;
+    top: 0vh;
+    left: 0vw;
+}
+.X {
+    
 }
 /* 
 .square:nth-child(1) {
