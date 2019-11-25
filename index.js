@@ -1,51 +1,80 @@
 const squareCollection = document.querySelector('.squareCollection');
+//Prep for adding squares under squareCollection
 const fragment = document.createDocumentFragment();
-const grid = [1, 10];
+//number of squares
+const grid = [1, 20];
+//number of squares in column 0
 const col = grid[0];
+//number of squares in row 1
 const row = grid[1];
+//total number of squares
 const numberOfElements = col * row;
 
+//Create <number> of squares to be under/within "squareCollection"
 for (let i = 0; i < numberOfElements; i++) {
+  //create variable for new div so can be referenced 
   const newDiv = document.createElement('div');
+  //Add a class of square
   newDiv.classList.add('square')
+  //Add a class of square + number 
   newDiv.classList.add('square'+ i)
+  //add 'children' squares in variable 'fragment'
   fragment.appendChild(newDiv);
 }
-console.log(numberOfElements)
+//Add divs to squareCollection
 squareCollection.appendChild(fragment);
-
+//Creating a variable ref all 'square' classes
 const squares = document.querySelectorAll('.square');
-console.log(squares)
-let yPos = 0;
-let xPos = 0;
 
-function xBoundries() {
-  
-}
+const minXPos = 0;
+let currentXPos = 0;
+const maxXPos = 30;
 
-const test1 = 0;
-const test2 = 50;
-
-// if(xPos <= 0) {
-//   return xPos += 5
-// } else if(xPos >= 30) {
-//   return xPos -= 5;
+// function wavyLine() {
+//   if(currentXPos >= maxXPos) {
+//     currentXPos - 5;
+//     return currentXPos;
+//   } else if(currentXPos <= minXPos){
+//     currentXPos + 5;
+//     return currentXPos;
+//   }
 // }
 
-let fromVar = true;
+// squares.forEach(square => square.style.left = `${wavyLine()}px`)
+
+//Default animation to 'setup' the structure of squares
 anime({
+  //target class of all squares
   targets: '.square',
+  //do not loop
   loop: false,
-  translateY: anime.stagger([0, 250]),
-  // translateY: function() {
-  //   return yPos += 18;
-  // },
-  translateX: 0,
+  //'stagger' from 0 - 250 on the Y Axis
+  translateY: anime.stagger([0, 250], {from: 'center'}),
+  //Move on the X Axis
+  translateX: anime.stagger([0, 100]),
+  //Make all squares have a borderRadius of 40%
   borderRadius: ['0%', '40%'],
+  //Change size of squares
   scaleY: 2,
   // delay: anime.stagger(100)
 });
 
+//Bottom V
+anime({
+  //target class of all squares
+  targets: '.squareCollection',
+  //do not loop
+  loop: false,
+  //'stagger' from 0 - 250 on the Y Axis
+  translateY: 100,
+  //Move on the X Axis
+  translateX: 100,
+  //Make all squares have a borderRadius of 40%
+  // borderRadius: ['0%', '40%'],
+  //Change size of squares
+  // scaleY: 2,
+  // delay: anime.stagger(100)
+});
 
 function pulse() {
   anime({
