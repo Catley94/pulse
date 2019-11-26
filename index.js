@@ -201,10 +201,107 @@ ________________________________________________________________________________
 anime({
   targets: '.background',
   loop: true,
-  backgroundColor: [{value: '#6100ff', duration: 1000, delay: 10},
-                    {value: '#ff9d00', duration: 1000, delay: 5000},
-                    {value: '#00ff21', duration: 1000, delay: 5000},
-                    {value: '#6100ff', duration: 1000, delay: 5000}
+  backgroundColor: [{value: '#000a1a', duration: 1000, delay: 10},
+                    {value: '#001536', duration: 1000, delay: 5000},
+                    {value: '#0d2140', duration: 1000, delay: 5000},
+                    {value: '#09111c', duration: 1000, delay: 5000},
+                    {value: '#000a1a', duration: 1000, delay: 5000}
 ],
+easing: 'linear'
+  // delay: anime.stagger(100)
+});
+
+// anime({
+//   targets: '.star',
+//   loop: true,
+//   easing: 'linear',
+//   // translateX: 100,
+//   // translateY: 100,
+//   backgroundColor: '#FFF'
+
+//   // delay: anime.stagger(100)
+// });
+
+anime({
+  targets: '.star1',
+  loop: true,
+  easing: 'linear',
+  translateX: [{value: anime.random(0,500), duration: 50000},
+                {value: anime.random(0,500), duration: 50000},
+                {value: anime.random(0,500), duration: 50000},
+                {value: anime.random(0,500), duration: 50000},
+
+],
+translateY: [{value: anime.random(0,500), duration: 50000},
+              {value: anime.random(0,500), duration: 50000},
+              {value: anime.random(0,500), duration: 50000},
+              {value: anime.random(0,500), duration: 50000},
+
+],
+  backgroundColor: '#FFF',
+  delay: anime.stagger(1000)
+
+  // delay: anime.stagger(100)
+});
+anime({
+  targets: '.star2',
+  loop: true,
+  easing: 'linear',
+  translateX: [{value: anime.random(0,500), duration: 50000},
+    {value: anime.random(0,500), duration: 50000},
+    {value: anime.random(0,500), duration: 50000},
+    {value: anime.random(0,500), duration: 50000},
+
+],
+translateY: [{value: anime.random(-100,400), duration: 50000},
+    {value: anime.random(-100,400), duration: 50000},
+    {value: anime.random(-100,400), duration: 50000},
+    {value: anime.random(-100,400), duration: 50000},
+
+],
+  backgroundColor: '#FFF',
+  delay: anime.stagger(1000)
+
+  // delay: anime.stagger(100)
+});
+anime({
+  targets: '.star3',
+  loop: true,
+  easing: 'linear',
+  translateX: [{value: anime.random(-500,100), duration: 50000},
+                {value: anime.random(-500,100), duration: 50000},
+                {value: anime.random(-500,100), duration: 50000},
+                {value: anime.random(-500,100), duration: 50000},
+  
+  ],
+  translateY: [{value: anime.random(-300,600), duration: 50000},
+                {value: anime.random(-300,300), duration: 50000},
+                {value: anime.random(-300,600), duration: 50000},
+                {value: anime.random(-300,600), duration: 50000},
+
+],
+  backgroundColor: '#FFF',
+
+  // delay: anime.stagger(100)
+});
+anime({
+  targets: '.star4',
+  loop: true,
+  easing: 'linear',
+  translateX: [{value: anime.random(-500,100), duration: 50000},
+    {value: anime.random(-500,100), duration: 50000},
+    {value: anime.random(-500,100), duration: 50000},
+    {value: anime.random(-500,100), duration: 50000},
+
+],
+translateY: [{value: anime.random(-300,600), duration: 50000},
+    {value: anime.random(-300,300), duration: 50000},
+    {value: anime.random(-300,600), duration: 50000},
+    {value: anime.random(-300,600), duration: 50000},
+
+],
+  backgroundColor: '#FFF',
+  delay: anime.stagger(1000)
+
   // delay: anime.stagger(100)
 });
