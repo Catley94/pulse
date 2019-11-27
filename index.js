@@ -197,6 +197,26 @@ ________________________________________________________________________________
 Changing Background
 _______________________________________________________________________________________________
 */
+const backgroundColour = document.querySelector('.background');
+const moon = document.querySelector('.moon');
+const sun = document.querySelector('.sun');
+const stars = document.querySelector('.stars');
+const starsAndMoon = anime({
+  targets: ['.stars', '.moon']
+});
+let dayTimeActive = false;
+
+moon.addEventListener('click', checkDayNight);
+sun.addEventListener('click', checkDayNight);
+
+
+function checkDayNight() {
+  if(dayTimeActive) {
+    nightTime()
+  } else {
+    dayTime()
+  }
+}
 
 anime({
   targets: '.background',
@@ -222,7 +242,7 @@ easing: 'linear'
 //   // delay: anime.stagger(100)
 // });
 
-anime({
+const star1 = anime({
   targets: '.star1',
   loop: true,
   easing: 'linear',
@@ -243,7 +263,7 @@ translateY: [{value: anime.random(0,500), duration: 50000},
 
   // delay: anime.stagger(100)
 });
-anime({
+const star2 = anime({
   targets: '.star2',
   loop: true,
   easing: 'linear',
@@ -264,7 +284,7 @@ translateY: [{value: anime.random(-100,400), duration: 50000},
 
   // delay: anime.stagger(100)
 });
-anime({
+const star3 = anime({
   targets: '.star3',
   loop: true,
   easing: 'linear',
@@ -284,7 +304,7 @@ anime({
 
   // delay: anime.stagger(100)
 });
-anime({
+const star4 = anime({
   targets: '.star4',
   loop: true,
   easing: 'linear',
@@ -306,7 +326,7 @@ translateY: [{value: anime.random(-300,600), duration: 50000},
   // delay: anime.stagger(100)
 });
 
-anime({
+const star5 = anime({
   targets: '.star5',
   loop: true,
   easing: 'linear',
@@ -328,7 +348,7 @@ translateY: [{value: anime.random(-600,100), duration: 50000},
   // delay: anime.stagger(100)
 });
 
-anime({
+const star6 = anime({
   targets: '.star6',
   loop: true,
   easing: 'linear',
@@ -348,7 +368,7 @@ translateY: [{value: anime.random(-100,700), duration: 50000},
   // delay: anime.stagger(100)
 });
 
-anime({
+const star7 = anime({
   targets: '.star7',
   loop: true,
   easing: 'linear',
@@ -368,7 +388,7 @@ translateY: [{value: anime.random(-700,50), duration: 50000},
   // delay: anime.stagger(100)
 });
 
-anime({
+const star8 = anime({
   targets: '.star8',
   loop: true,
   easing: 'linear',
@@ -405,3 +425,71 @@ translateY: [{value: anime.random(-700,50), duration: 50000},
 
 //   // delay: anime.stagger(100)
 // });
+
+function dayTime() {
+  dayTimeActive = true;
+  anime({
+    targets: ['.stars', '.moon'],
+    opacity: 0
+  });
+  stars
+  backgroundColour.style.backgroundColor = "#87edff";
+  anime({
+    targets: '.background',
+    loop: true,
+    backgroundColor: [{value: '#87edff', duration: 1000, delay: 0},
+                      {value: '#a7f0fc', duration: 1000, delay: 5000},
+                      {value: '#5fe4fa', duration: 1000, delay: 5000},
+                      {value: '#78c0cc', duration: 1000, delay: 5000},
+                      {value: '#87edff', duration: 1000, delay: 5000}
+  ],
+  easing: 'linear'
+    // delay: anime.stagger(100)
+  });
+  anime({
+    targets: '.sun',
+    opacity: [{value: 1, duration: 10000}],
+  });
+  pauseAllStars();
+
+
+
+}
+
+function pauseAllStars() {
+  star1.pause()
+  star2.pause()
+  star3.pause()
+  star4.pause()
+  star5.pause()
+  star6.pause()
+  star7.pause()
+  star8.pause()
+}
+
+function nightTime() {
+  dayTimeActive = false;
+  anime({
+    targets: '.sun',
+    opacity: [{value: 0, duration: 10000}],
+  });
+ 
+  const starsAndMoon = anime({
+    targets: ['.stars', '.moon'],
+    opacity: [{value: 1, duration: 10000}],
+  });
+  backgroundColour.style.backgroundColor = "#000a1a";
+  anime({
+    targets: '.background',
+    loop: true,
+    backgroundColor: [{value: '#000a1a', duration: 1000, delay: 10},
+                      {value: '#001536', duration: 1000, delay: 5000},
+                      {value: '#0d2140', duration: 1000, delay: 5000},
+                      {value: '#09111c', duration: 1000, delay: 5000},
+                      {value: '#000a1a', duration: 1000, delay: 5000}
+  ],
+  easing: 'linear'
+    // delay: anime.stagger(100)
+  });
+  
+}

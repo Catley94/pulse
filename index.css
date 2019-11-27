@@ -28,9 +28,7 @@ html{
     top: 0vh;
     left: 0vw;
 }
-.X {
-    
-}
+
 
 .background {
     width: 100%;
@@ -98,9 +96,9 @@ html{
   border-radius: 100px;
   z-index: 2;
   background: #FFF;
-  left: 30vw;
-  top: 20vh;
-  box-shadow: 0px 0px 70px 10px white;
+  left: 7rem;
+  top: 5rem;
+  box-shadow: 0px 0px 70px 10px #FFF;
 }
 
 .moon::before {
@@ -115,4 +113,17 @@ html{
   box-shadow: 0px 0px 5px 2px #c7c7c7;
   border-radius: 100px;
   transform: scale(3);
+}
+
+.sun {
+  position: absolute;
+  opacity: 0;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 100px;
+  z-index: 2;
+  background: #ffdd00;
+  left: 7rem;
+  top: 5rem;
+  box-shadow: 0px 0px 70px 20px #ffed75;
 }
