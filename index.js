@@ -388,16 +388,20 @@ translateY: [{value: anime.random(-700,50), duration: 50000},
   // delay: anime.stagger(100)
 });
 
-anime({
-  targets: '.moon',
-  loop: true,
-  easing: 'linear',
-  translateX: [{value: anime.stagger([0, 700]), duration: 50000},
-                {value: anime.stagger([700, 0]), duration: 50000}   
-],
-translateY: 100,
-  backgroundColor: '#FFF',
-  delay: anime.stagger(1000)
+// anime({
+//   targets: '.moon',
+//   loop: true,
+//   easing: 'linear',
+//   translateX: [{value: -50, duration: 5000},
+//                 {value: 50, duration: 5000},
+//                 {value: -50, duration: 5000}
+// ],
+// translateY: [{value: -50, duration: 5000},
+//               {value: 50, duration: 5000},
+//               {value: -50, duration: 5000}
+// ],
+//   backgroundColor: '#FFF',
+//   delay: anime.stagger(1000)
 
-  // delay: anime.stagger(100)
-});
+//   // delay: anime.stagger(100)
+// });
