@@ -209,6 +209,27 @@ let dayTimeActive = false;
 moon.addEventListener('click', checkDayNight);
 sun.addEventListener('click', checkDayNight);
 
+function pauseAllStars() {
+  star1.pause()
+  star2.pause()
+  star3.pause()
+  star4.pause()
+  star5.pause()
+  star6.pause()
+  star7.pause()
+  star8.pause()
+}
+
+function playAllStars() {
+  star1.play()
+  star2.play()
+  star3.play()
+  star4.play()
+  star5.play()
+  star6.play()
+  star7.play()
+  star8.play()
+}
 
 function checkDayNight() {
   if(dayTimeActive) {
@@ -408,31 +429,52 @@ translateY: [{value: anime.random(-700,50), duration: 50000},
   // delay: anime.stagger(100)
 });
 
-// anime({
-//   targets: '.moon',
-//   loop: true,
-//   easing: 'linear',
-//   translateX: [{value: -50, duration: 5000},
-//                 {value: 50, duration: 5000},
-//                 {value: -50, duration: 5000}
-// ],
-// translateY: [{value: -50, duration: 5000},
-//               {value: 50, duration: 5000},
-//               {value: -50, duration: 5000}
-// ],
-//   backgroundColor: '#FFF',
-//   delay: anime.stagger(1000)
+const cloud1 = anime({
+  targets: '.cloud1',
+  loop: true,
+  easing: 'linear',
+  translateX: [{value: anime.random(-200,500), duration: 60000},
+    {value: anime.random(-200,500), duration: 60000},
+    {value: anime.random(-200,500), duration: 60000},
+    {value: anime.random(-200,500), duration: 60000},
+],
+});
 
-//   // delay: anime.stagger(100)
-// });
+const cloud2 = anime({
+  targets: '.cloud2',
+  loop: true,
+  easing: 'linear',
+  translateX: [{value: anime.random(-200,500), duration: 60000},
+    {value: anime.random(-200,500), duration: 60000},
+    {value: anime.random(-200,500), duration: 60000},
+    {value: anime.random(-200,500), duration: 60000},
+],
+});
+
+const cloud3 = anime({
+  targets: '.cloud3',
+  loop: true,
+  easing: 'linear',
+  translateX: [{value: anime.random(-200,500), duration: 60000},
+    {value: anime.random(-200,500), duration: 60000},
+    {value: anime.random(-200,500), duration: 60000},
+    {value: anime.random(-200,500), duration: 60000},
+],
+});
 
 function dayTime() {
   dayTimeActive = true;
   anime({
-    targets: ['.stars', '.moon'],
-    opacity: 0
+    targets: '.sun',
+    opacity: 1,
+    easing: 'linear'
   });
-  stars
+  // anime({
+  //   targets: ['.stars', '.moon'],
+  //   opacity: 0
+  // });
+  stars.style.opacity = 0
+  moon.style.opacity = 0
   backgroundColour.style.backgroundColor = "#87edff";
   anime({
     targets: '.background',
@@ -444,28 +486,15 @@ function dayTime() {
                       {value: '#87edff', duration: 1000, delay: 5000}
   ],
   easing: 'linear'
-    // delay: anime.stagger(100)
   });
-  anime({
-    targets: '.sun',
-    opacity: [{value: 1, duration: 10000}],
-  });
+  
   pauseAllStars();
 
 
 
 }
 
-function pauseAllStars() {
-  star1.pause()
-  star2.pause()
-  star3.pause()
-  star4.pause()
-  star5.pause()
-  star6.pause()
-  star7.pause()
-  star8.pause()
-}
+
 
 function nightTime() {
   dayTimeActive = false;
@@ -474,10 +503,12 @@ function nightTime() {
     opacity: [{value: 0, duration: 10000}],
   });
  
-  const starsAndMoon = anime({
-    targets: ['.stars', '.moon'],
-    opacity: [{value: 1, duration: 10000}],
-  });
+  // const starsAndMoon = anime({
+  //   targets: ['.stars', '.moon'],
+  //   opacity: [{value: 1, duration: 10000}],
+  // });
+  stars.style.opacity = 1
+  moon.style.opacity = 1
   backgroundColour.style.backgroundColor = "#000a1a";
   anime({
     targets: '.background',
@@ -489,7 +520,6 @@ function nightTime() {
                       {value: '#000a1a', duration: 1000, delay: 5000}
   ],
   easing: 'linear'
-    // delay: anime.stagger(100)
   });
-  
+  playAllStars();
 }

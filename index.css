@@ -127,3 +127,108 @@ html{
   top: 5rem;
   box-shadow: 0px 0px 70px 20px #ffed75;
 }
+
+.cloud1 {
+  position: absolute;
+  height: 7rem;
+  width: 7rem;
+  border-radius: 100px;
+  z-index: 3;
+  background: grey;
+  left: 30rem;
+  top: 2rem;
+}
+
+.cloud1::before {
+  content: '';
+  position: absolute;
+  height: 8rem;
+  width: 8rem;
+  border-radius: 100px;
+  z-index: 3;
+  background: grey;
+  top: 3rem;
+  left: 3rem;
+}
+
+.cloud1::after {
+  content: '';
+  position: absolute;
+  height: 8rem;
+  width: 8rem;
+  border-radius: 100px;
+  z-index: 3;
+  background: grey;
+  top: 3rem;
+  left: -3rem;
+}
+
+.cloud2 {
+  position: absolute;
+  height: 7rem;
+  width: 7rem;
+  border-radius: 100px;
+  z-index: 3;
+  background: grey;
+  left: 20rem;
+  top: 20rem;
+}
+
+.cloud2::before {
+  content: '';
+  position: absolute;
+  height: 8rem;
+  width: 8rem;
+  border-radius: 100px;
+  z-index: 3;
+  background: grey;
+  top: 3rem;
+  left: 3rem;
+}
+
+.cloud2::after {
+  content: '';
+  position: absolute;
+  height: 8rem;
+  width: 8rem;
+  border-radius: 100px;
+  z-index: 3;
+  background: grey;
+  top: 3rem;
+  left: -3rem;
+}
+
+.cloud3 {
+  position: absolute;
+  height: 7rem;
+  width: 7rem;
+  border-radius: 100px;
+  z-index: 3;
+  background: grey;
+  left: 70rem;
+  top: 10rem;
+}
+
+.cloud3::before {
+  content: '';
+  position: absolute;
+  height: 8rem;
+  width: 8rem;
+  border-radius: 100px;
+  z-index: 3;
+  background: grey;
+  top: 3rem;
+  left: 3rem;
+}
+
+.cloud3::after {
+  content: '';
+  position: absolute;
+  height: 8rem;
+  width: 8rem;
+  border-radius: 100px;
+  z-index: 3;
+  background: grey;
+  top: 3rem;
+  left: -3rem;
+}
